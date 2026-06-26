@@ -134,3 +134,20 @@ curl -i -X POST http://localhost:8000/analyze-ticket \
   "transaction_history": []
 }'
 ```
+
+### Using Sample JSON Files
+
+You can also run queries using the mock JSON payloads provided in the [examples/](file:///Users/shakera/Downloads/Study/Hackathons/Codex%20Community%20Hackathon%20sust/examples) directory:
+
+```bash
+curl -i -X POST http://localhost:8000/analyze-ticket \
+-H "Content-Type: application/json" \
+-d @examples/request_wrong_transfer.json
+```
+
+For phishing report testing:
+```bash
+curl -i -X POST http://localhost:8000/analyze-ticket \
+-H "Content-Type: application/json" \
+-d @examples/request_phishing.json
+```
