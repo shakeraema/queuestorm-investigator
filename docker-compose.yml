@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  queuestorm-investigator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: queuestorm-investigator
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      # Keys can be loaded from host environment or local .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    env_file:
+      - .env
+    restart: unless-stopped
