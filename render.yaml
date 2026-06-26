@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: queuestorm-investigator
+    env: docker
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: HOST
+        value: 0.0.0.0
+      - key: GEMINI_API_KEY
+        sync: false
+        placeholder: "Insert your Google Gemini API Key here"
